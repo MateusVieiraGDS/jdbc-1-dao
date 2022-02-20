@@ -3,6 +3,7 @@ package application;
 import java.util.Date;
 import java.util.List;
 
+import db.DB;
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.dao.SellerDao;
@@ -45,8 +46,8 @@ public class Program {
 		rowsaff = sellerDao.deleteById(8);
 		System.out.println("Update! affected rows = " + rowsaff);
 		*/
-		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();		
 		/*
 		System.out.println("\nTEST #1: Department insert");		
 		Department dep = new Department();
@@ -73,6 +74,8 @@ public class Program {
 		System.out.println("\nTEST #4: Department findAll");
 		for(Department dep : departmentDao.findAll())
 			System.out.println("Find department: " + dep);
+		
+		DB.closeConnection();		
 	}
 
 }
