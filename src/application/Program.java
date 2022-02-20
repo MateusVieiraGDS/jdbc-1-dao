@@ -45,13 +45,22 @@ public class Program {
 		rowsaff = sellerDao.deleteById(8);
 		System.out.println("Update! affected rows = " + rowsaff);
 		*/
-		
-		System.out.println("\nTEST #1: Department insert");
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+		
+		/*
+		System.out.println("\nTEST #1: Department insert");		
 		Department dep = new Department();
 		dep.setName("Marketing");
 		departmentDao.insert(dep);
 		System.out.println("Insert Department: " + dep);
+		*/
+		
+		System.out.println("\nTEST #2: Department update");
+		Department dep = new Department();
+		dep.setId(5);
+		dep.setName("Logistic");
+		int rowsaff = departmentDao.update(dep);
+		System.out.println("Insert Department: " + rowsaff);
 	}
 
 }
