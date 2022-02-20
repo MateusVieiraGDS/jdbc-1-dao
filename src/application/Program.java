@@ -53,14 +53,26 @@ public class Program {
 		dep.setName("Marketing");
 		departmentDao.insert(dep);
 		System.out.println("Insert Department: " + dep);
-		*/
+		
 		
 		System.out.println("\nTEST #2: Department update");
 		Department dep = new Department();
 		dep.setId(5);
 		dep.setName("Logistic");
 		int rowsaff = departmentDao.update(dep);
-		System.out.println("Insert Department: " + rowsaff);
+		System.out.println("Update Department! rows affected = " + rowsaff);
+		
+		*/
+		System.out.println("\nTEST #3: Department delete");
+		int rowsaff = departmentDao.deleteById(5);
+		System.out.println("Delete Department! rows affected = " + rowsaff);
+		
+		System.out.println("\nTEST #4: Department findById");
+		System.out.println("Find department: " + departmentDao.findById(2));
+		
+		System.out.println("\nTEST #4: Department findAll");
+		for(Department dep : departmentDao.findAll())
+			System.out.println("Find department: " + dep);
 	}
 
 }
